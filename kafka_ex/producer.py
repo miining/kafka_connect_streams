@@ -12,7 +12,7 @@ if sys.version_info >= (3, 12, 0):
 
 # 텔레그램 봇 토큰과 단체 채팅방 ID 설정
 BOT_TOKEN = 'xxxxx'
-# 7885985935
+
 GROUP_CHAT_ID = xxxx
 
 # Kafka Producer 설정
