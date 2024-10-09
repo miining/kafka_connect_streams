@@ -12,7 +12,6 @@ if sys.version_info >= (3, 12, 0):
 
 # 텔레그램 봇 토큰과 단체 채팅방 ID 설정
 BOT_TOKEN = 'xxxxx'
-
 GROUP_CHAT_ID = xxxx
 
 # Kafka Producer 설정
@@ -30,7 +29,7 @@ producer = KafkaProducer(
 
 def start(update: Update, context):
     """Start 명령어 처리 함수"""
-    update.message.reply_text('안녕하세요! 이 봇은 메시지를 수신하고 있습니다.')
+    update.message.reply_text('메시지를 수신하고 있습니다')
 
 def handle_message(update: Update, context):
     """수신한 메시지를 출력하고 Kafka로 전송하는 함수"""
@@ -50,7 +49,7 @@ def handle_message(update: Update, context):
           producer.send('message-topic', key='others', value=message_text)
         
         # Kafka 토픽으로 메시지 전송
-        producer.flush()  # 메시지가 즉시 전송되도록 보장
+        producer.flush()  # 메시지가 바로 전송되도록 보장
         
 
 def main():
